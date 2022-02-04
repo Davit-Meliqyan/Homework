@@ -15,6 +15,8 @@ public class prima {
         }
         System.out.println(isPrime(4));
         System.out.println(sum);
+
+        //  \u000a System.out.println("dd");
     }
 
 
@@ -27,5 +29,5 @@ public class prima {
         return true;
     }
 
-    //  \u000a System.out.println("dd");
+
 }
