@@ -6,12 +6,12 @@ public class Homework_1_7 {
 
     public static void main(String[] args) {
 
-            int max = 100;
-            int min = 1;
+           int a=10;
+           short c=785;
+           byte b=65;
 
-            Random randomNum = new Random();
-            int randomNumber = min + randomNum.nextInt(max);
-            System.out.print(randomNumber+" ");
+           int average = a + (int)b + (int)c;
+           int product = a * (int)b * (int)c;
 
     }
 }
