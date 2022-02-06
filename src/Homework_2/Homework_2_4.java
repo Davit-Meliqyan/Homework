@@ -1,8 +1,8 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Scanner;
 
-public class Homework_1_4 {
+public class Homework_2_4 {
 
     public static void main(String[] args) {
 

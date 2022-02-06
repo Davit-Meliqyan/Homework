@@ -1,8 +1,8 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Scanner;
 
-public class Homework_1_11 {
+public class Homework_2_19 {
 
     public static void main(String[] args) {
 
@@ -13,6 +13,12 @@ public class Homework_1_11 {
         System.out.println("insert  b");
         int b = scanner.nextInt();
 
-        System.out.println("remainder from a to b " + a % b);
+        int c;
+        c=a;
+        a=b;
+        b=c;
+
+        System.out.println("a = " + a + " b = "+b);
+
     }
 }

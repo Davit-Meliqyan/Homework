@@ -1,12 +1,12 @@
-package Homeworke_1;
+package Homework_2;
 
-public class Homework_1_6 {
+public class Homework_2_6 {
 
     public static void main(String[] args) {
 
-        System.out.println(Homework_1_6.areaRightAngledTriangle(4,5));
-        System.out.println(Homework_1_6.areaSquare(6));
-        System.out.println(Homework_1_6.areaRectangle(7,8));
+        System.out.println(Homework_2_6.areaRightAngledTriangle(4,5));
+        System.out.println(Homework_2_6.areaSquare(6));
+        System.out.println(Homework_2_6.areaRectangle(7,8));
 
     }
 

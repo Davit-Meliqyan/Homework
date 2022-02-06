@@ -1,26 +1,24 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Scanner;
 
-public class Homework_1_18 {
+public class Homework_2_17 {
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("insert 3-digit number ");
         int a = scanner.nextInt();
-        int digitSum = 0;
         int i = 0;
-        int digit;
+        int firstDigit = 0;
 
         while (i<3){
-            digit = a%10;
-            digitSum += digit;
+            firstDigit = a%10;
             a /= 10;
             i++;
-        };
+        }
 
-        if (a == 0)System.out.println(digitSum);
+        if (a == 0)System.out.println(firstDigit);
         else System.out.println("not 3-digit number ");
     }
 }

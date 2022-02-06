@@ -1,8 +1,8 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Random;
 
-public class Homework_1_14 {
+public class Homework_2_14 {
 
     public static void main(String[] args) {
 
@@ -11,6 +11,6 @@ public class Homework_1_14 {
 
         Random randomNum = new Random();
         int randomNumber = min + randomNum.nextInt(max);
-        System.out.print(randomNumber+" ");
+        System.out.print(randomNumber + " ");
     }
 }

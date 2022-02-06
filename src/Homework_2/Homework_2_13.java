@@ -1,8 +1,8 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Random;
 
-public class Homework_1_13 {
+public class Homework_2_13 {
 
     public static void main(String[] args) {
 

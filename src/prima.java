@@ -6,8 +6,8 @@ public class prima {
         int count = 0;
         int n = 2;
         int sum = 0;
-        while (count < 6){
-            if(isPrime(n)){
+        while (count < 6) {
+            if (isPrime(n)) {
                 count++;
                 sum = sum + n;
             }
@@ -20,10 +20,8 @@ public class prima {
     }
 
 
-
-
-    static boolean isPrime(int n){
-        for (int i =2; i<=Math.sqrt(n); i++) {
+    static boolean isPrime(int n) {
+        for (int i = 2; i <= Math.sqrt(n); i++) {
             if (n % i == 0) return false;
         }
         return true;

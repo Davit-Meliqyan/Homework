@@ -1,8 +1,8 @@
-package Homeworke_1;
+package Homework_2;
 
 import java.util.Scanner;
 
-public class Homework_1_16 {
+public class Homework_2_16 {
 
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class Homework_1_16 {
             a /= 10;
             if(a > 0 && a < 10) secondDigit = digit;
             i++;
-        };
+        }
 
         if (a == 0)System.out.println(secondDigit);
         else System.out.println("not 3-digit number ");

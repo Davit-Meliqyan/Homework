@@ -1,17 +1,17 @@
-package Homeworke_1;
+package Homework_2;
 
-public class Homework_1_8 {
+public class Homework_2_8 {
 
     public static void main(String[] args) {
 
         int sum = 0;
         for (int n=1; n <= 10; n++){
-             sum += Homework_1_8.S(n);}
+             sum += Homework_2_8.S(n);}
 
         System.out.println(sum);
 
         for (int n=1; n <= 15; n++){
-            sum += Homework_1_8.S(n);}
+            sum += Homework_2_8.S(n);}
 
         System.out.println(sum);
 
