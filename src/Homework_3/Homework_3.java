@@ -7,7 +7,6 @@ public class Homework_3 {
 
     public static void castingToBig(byte b) {
 
-        System.out.println("insert byte type variable");
         short s = b;
         System.out.println(b + " " + s);
         int a = s;
@@ -21,9 +20,8 @@ public class Homework_3 {
 
     }
 
-    public static void castingToSmall(float d){
+    public static void castingToSmall(double d){
 
-        System.out.println("insert float type variable");
         float f = (float) d;
         System.out.println(f + " " + d);
         long l = (long) f;
@@ -121,11 +119,13 @@ public class Homework_3 {
 
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("insert byte type variable");
         byte b = scanner.nextByte();
         Homework_3.castingToBig(b);
 
-        float f = scanner.nextFloat();
-        Homework_3.castingToSmall(f);
+        System.out.println("insert double type variable");
+        double d = scanner.nextDouble();
+        Homework_3.castingToSmall(d);
 
         int tempFahrenheit = scanner.nextInt();
         Homework_3.fahrenheitToCelsius(tempFahrenheit);
