@@ -36,7 +36,7 @@ public class Book {
         this.price = price;
     }
 
-    public static void bookInfo(Book book) {
-        System.out.println(book.getName()+" "+ book.author.name+" "+book.getPrice());
+    public  void bookInfo() {
+        System.out.println(getName()+" "+ author.name+" "+getPrice());
     }
 }

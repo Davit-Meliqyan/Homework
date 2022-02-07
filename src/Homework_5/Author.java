@@ -36,7 +36,7 @@ public class Author {
         this.gender = gender;
     }
 
-    public static void authorInfo(Author author) {
-        System.out.println(author.getName()+" "+author.getEmail()+" "+author.getGender());
+    public  void authorInfo() {
+        System.out.println(getName()+" "+getEmail()+" "+getGender());
     }
 }

@@ -6,8 +6,8 @@ public class Test {
 
         Person person1 = new Person("Vazgen", 15, "Abovyan");
         Person person2 = new Person("Manuk", 28, "Hrazdan");
-        Person.personInfo(person1);
-        Person.personInfo(person2);
+        person1.personInfo();
+        person2.personInfo();
 
 
         Employee employee1 = new Employee(1258, "Mane", 30
@@ -22,24 +22,24 @@ public class Test {
                 , "Security", Gender.MALE);
 
 
-        Employee.employeeInfo(employee1);
-        Employee.employeeInfo(employee2);
-        Employee.employeeInfo(employee3);
-        Employee.employeeInfo(employee4);
-        Employee.employeeInfo(employee5);
+        employee1.employeeInfo();
+        employee2.employeeInfo();
+        employee3.employeeInfo();
+        employee4.employeeInfo();
+        employee5.employeeInfo();
 
 
         Author PauloCoelho = new Author("Paulo Coelho", "pauloco@gmail.com", Gender.MALE);
         Author LevTolstoy = new Author("Lev Tolstoy", "lev1847@gmail.com", Gender.MALE);
-        Author.authorInfo(PauloCoelho);
-        Author.authorInfo(LevTolstoy);
+        PauloCoelho.authorInfo();
+        LevTolstoy.authorInfo();
 
         Book alchemist = new Book("alchemist", PauloCoelho, 2500);
         Book annaKarenina = new Book("Anna Karenina", LevTolstoy, 3500);
         Book adultery = new Book("adultery", PauloCoelho, 3000);
-        Book.bookInfo(alchemist);
-        Book.bookInfo(annaKarenina);
-        Book.bookInfo(adultery);
+        adultery.bookInfo();
+        annaKarenina.bookInfo();
+        alchemist.bookInfo();
 
     }
 
