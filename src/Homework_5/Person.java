@@ -62,7 +62,7 @@ public class Person {
         this.address = address;
     }
 
-    public void personInfo() {
+    public void showInfo() {
         System.out.println(getName()+" "+getAge()+" "+getAddress());
     }
 }

@@ -59,7 +59,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public  void employeeInfo() {
+    public  void showInfo() {
         System.out.println(getId()+" "+getName()+" "+getAge()+" "+getDepartment()+" "+getGender());
     }
 }
