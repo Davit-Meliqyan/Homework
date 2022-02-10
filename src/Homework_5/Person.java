@@ -5,8 +5,41 @@ public class Person {
     String name;
     int age;
     String address;
+    String email;
+    String salary;
 
     public Person() {
+    }
+
+
+    public Person(String name, String address, String email) {
+        this.name = name;
+        this.address = address;
+        this.email = email;
+    }
+
+    public Person(String name, int age, String address, String email, String salary) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.email = email;
+        this.salary = salary;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSalary() {
+        return salary;
+    }
+
+    public void setSalary(String salary) {
+        this.salary = salary;
     }
 
     public Person(String name, int age, String address) {
@@ -63,6 +96,6 @@ public class Person {
     }
 
     public void showInfo() {
-        System.out.println(getName()+" "+getAge()+" "+getAddress());
+        System.out.println(getName()+" "+getAge()+" "+getAddress() +" "+ getSalary()+ " "+ getEmail());
     }
 }

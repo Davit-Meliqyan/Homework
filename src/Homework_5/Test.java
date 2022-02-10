@@ -5,6 +5,8 @@ public class Test {
     public static void main(String[] args) {
 
         Person person1 = new Person("Vazgen", 15, "Abovyan");
+
+
         Person person2 = new Person("Manuk", 28, "Hrazdan");
         person1.showInfo();
         person2.showInfo();
@@ -19,7 +21,7 @@ public class Test {
         Employee employee4 = new Employee(1299, "Armen", 29
                 , "IT", Gender.MALE);
         Employee employee5 = new Employee(1265, "Gor", 42
-                , "Security", Gender.MALE);
+                , "Security", Gender.MALE );
 
 
         employee1.showInfo();
