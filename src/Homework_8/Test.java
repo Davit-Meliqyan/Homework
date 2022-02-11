@@ -13,7 +13,7 @@ public class Test {
 
         System.out.println("input age :");
         int age = scanner.nextInt();
-        if (age >= 18 && age >= 0) System.out.println("Person is eligible to vote");
+        if (age >= 18) System.out.println("Person is eligible to vote");
         else if (age < 18 && age >= 0) System.out.println("Person is not eligible to vote");
         else System.err.println("ERROR");
     }
@@ -250,7 +250,7 @@ public class Test {
 //        multiple5();
 //        greatestNumber();
 //        iceCream();
-//        printAbs();
+  //     printAbs();
 //        weekday();
 //        leapYear();
 //        randomFilter();
