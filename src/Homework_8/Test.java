@@ -14,14 +14,14 @@ public class Test {
         System.out.println("input age :");
         int age = scanner.nextInt();
         if (age >= 18) System.out.println("Person is eligible to vote");
-        else if (age < 18 && age >= 0) System.out.println("Person is not eligible to vote");
+        else if (age >= 0) System.out.println("Person is not eligible to vote");
         else System.err.println("ERROR");
     }
 
     public static void isEven() {
         System.out.println("input number :");
         int num = scanner.nextInt();
-        if (num % 2 == 0 && num != 0) System.out.println("Number is even");
+        if (num % 2 == 0 && num > 0) System.out.println("Number is even");
         else System.out.println("Number is not even");
 
     }
@@ -87,7 +87,7 @@ public class Test {
         int c = scanner.nextInt();
         if (c >= a && c >= b) {
             System.out.println("greatest number " + c);
-        } else if (b >= a && b >= c) {
+        } else if (b >= a) {
             System.out.println("greatest number " + b);
         } else {
             System.out.println("greatest number " + a);
@@ -121,7 +121,6 @@ public class Test {
         } else {
             System.err.println("ERROR");
         }
-
     }
 
     public static void leapYear() {
@@ -142,11 +141,7 @@ public class Test {
         int high = 10000;
         int result = (int) (Math.random() * ((high - low)) + low + 1);
         System.out.println(result);
-        if ((result > -10000 && result < 10000) && (result % 3 == 0 || result % 5 == 0)) {
-            System.out.println(true);
-        } else {
-            System.out.println(false);
-        }
+        System.out.println((result > -10000 && result < 10000) && (result % 3 == 0 || result % 5 == 0));
     }
 
     public static void multipleOf7() {
@@ -175,29 +170,24 @@ public class Test {
         }
     }
 
-    public static boolean quarterOfPoint(int x1 ,int y1, int x2 , int y2) {
+    public static boolean quarterOfPoint(int x1, int y1, int x2, int y2) {
 
         if (x1 == 0 || y1 == 0 || x2 == 0 || y2 == 0) {
             System.out.println("Not in the same quarter");
             return true;
-        }
-        else if (x1 > 0 && y1 > 0 && x2 > 0 && y2 > 0) {
+        } else if (x1 > 0 && y1 > 0 && x2 > 0 && y2 > 0) {
             System.out.println("1 quarter");
             return true;
-        }
-        else if (x1 < 0 && y1 > 0 && x2 < 0 && y2 > 0) {
+        } else if (x1 < 0 && y1 > 0 && x2 < 0 && y2 > 0) {
             System.out.println("2 quarter");
             return true;
-        }
-        else if (x1 < 0 && y1 < 0 && x2 < 0 && y2 < 0) {
+        } else if (x1 < 0 && y1 < 0 && x2 < 0 && y2 < 0) {
             System.out.println("3 quarter");
             return true;
-        }
-        else if (x1 > 0 && y1 < 0 && x2 > 0 && y2 < 0) {
+        } else if (x1 > 0 && y1 < 0 && x2 > 0 && y2 < 0) {
             System.out.println("4 quarter");
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     public static void degenerateTriangle() {
@@ -229,7 +219,7 @@ public class Test {
         int num3 = scanner.nextInt();
         if ((num1 == num2 && num1 != num3) || (num1 == num3 && num1 != num2) || (num2 == num3 && num1 != num3)) {
             System.out.println(2);
-        } else if (num1 == num2 && num2 == num3) {
+        } else if (num1 == num2) {
             System.out.println(3);
         } else {
             System.out.println("Numbers is not equals ");
@@ -253,8 +243,8 @@ public class Test {
                 double x = -b / 2 * a;
                 System.out.println("quadratic equation has 1 real solution x = " + x);
             } else {
-                double x1 = (-b + Math.sqrt(D)) / 2 * a;
-                double x2 = (-b - Math.sqrt(D)) / 2 * a;
+                double x1 = (-b + Math.sqrt(D)) / (2 * a);
+                double x2 = (-b - Math.sqrt(D)) / (2 * a);
                 System.out.println("quadratic equation has 2 real solution x1 = " + x1 + " x2 = " + x2);
             }
         }
@@ -302,7 +292,7 @@ public class Test {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-//        eligibleToVote();
+        //eligibleToVote();
 //        isEven();
 //        printRandom();
 //        multiple5();
@@ -312,23 +302,23 @@ public class Test {
 //        weekday();
 //        leapYear();
 //        randomFilter();
-//        multipleOf7();
+        //       multipleOf7();
 
-        System.out.println("Input x1");
-        int x1 = scanner.nextInt();
-        System.out.println("Input y1");
-        int y1 = scanner.nextInt();
-        System.out.println("Input x2");
-        int x2 = scanner.nextInt();
-        System.out.println("Input y2");
-        int y2 = scanner.nextInt();
-
-
-        boolean bool = quarterOfPoint(x1,y1,x2,y2);
-        System.out.println(bool);
+//        System.out.println("Input x1");
+//        int x1 = scanner.nextInt();
+//        System.out.println("Input y1");
+//        int y1 = scanner.nextInt();
+//        System.out.println("Input x2");
+//        int x2 = scanner.nextInt();
+//        System.out.println("Input y2");
+//        int y2 = scanner.nextInt();
+//
+//
+//        boolean bool = quarterOfPoint(x1, y1, x2, y2);
+//        System.out.println(bool);
 //        degenerateTriangle();
 //        equalsNumbers();
-//        quadraticEquation();
+ //       quadraticEquation();
         // nonDecreasingOrder();
     }
 }
