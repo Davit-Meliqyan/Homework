@@ -1,5 +1,6 @@
 package Homeworke_10;
 
+import java.util.Random;
 import java.util.Scanner;
 
 import static Homework_9.Test.isPower2Bit;
@@ -135,42 +136,83 @@ public class Test {
         }
     }
 
-    public static  void  notMultipleOf3(int n){
+    public static void notMultipleOf3(int n) {
         int i = 1;
-        while (i <= n){
-            if (i % 3 != 0){
+        while (i <= n) {
+            if (i % 3 != 0) {
                 System.out.println(i);
             }
             i++;
         }
     }
 
-    public static int nFibonacci(int f){
+    public static int nFibonacci(int f) {
         int a = 0;
         int b = 1;
         int count = 0;
-        while (b <= f){
+        while (b <= f) {
             b += a;
             a = b - a;
-            count ++;
+            count++;
         }
         //System.out.println(a+" "+b+" "+count);
-        if( a == f){
+        if (a == f) {
             return count;
-        }
-        else return -1;
+        } else return -1;
     }
 
-    public static int athleteRan(double x , double y){
+    public static int athleteRan(double x, double y) {
         int count = 1;
-        while (x <= y){
-            x = x + x/10;
+        while (x <= y) {
+            x = x + x / 10;
             count++;
         }
         return count;
     }
 
+    public static int sequence() {
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        int res = 0;
+        while (true) {
+            System.out.println("input number");
+            int n = scanner.nextInt();
+            if (n == 0) {
+                return res;
+            }
+            count++;
+            if (count == 2) {
+                res = n;
+            }
+        }
+    }
 
+    public static void quiz() {
+        Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        int myNum = random.nextInt(100);
+        while (true) {
+            System.out.println("input number");
+            int n = scanner.nextInt();
+            if (n == myNum) {
+                System.out.println("Yes, you guessed the number");
+                break;
+            } else if (n < myNum) {
+                System.out.println("Too high, try again");
+            } else {
+                System.out.println("Too low, try again");
+            }
+        }
+    }
+
+    public static int sumOfDigits(int num) {
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        return sum;
+    }
 
 
     public static void main(String[] args) {
@@ -223,7 +265,14 @@ public class Test {
 //        int y = scanner.nextInt();
 //        System.out.println(athleteRan(x,y));
 
+//        System.out.println(sequence());
 
+
+//        quiz();
+
+//        System.out.println("input number");
+//        int z = scanner.nextInt();
+//        System.out.println(sumOfDigits(z));
 
 
     }
