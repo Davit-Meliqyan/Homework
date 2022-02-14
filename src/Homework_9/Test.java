@@ -57,17 +57,14 @@ public class Test {
     public static void correctAnswer(int i) {
         switch (i) {
             case 1:
+            case 3:
+            case 4:
                 System.out.println("Invalide choice");
                 break;
             case 2:
                 System.out.println("Congratulation");
                 break;
-            case 3:
-                System.out.println("Invalide choice");
-                break;
-            case 4:
-                System.out.println("Invalide choice");
-                break;
+
         }
     }
 
@@ -131,12 +128,12 @@ public class Test {
 
     public static void switchEven(int num) {
 
-        switch(num % 2){
+        switch (num % 2) {
             case 0:
-                System.out.println(num+" is a Even number");
+                System.out.println(num + " is a Even number");
                 break;
             case 1:
-                System.out.println(num+" is a Odd number");
+                System.out.println(num + " is a Odd number");
         }
     }
 
@@ -218,6 +215,7 @@ public class Test {
 //        System.out.println("Input String Variable");
 //        String str = scanner.nextLine();
 //        System.out.println(checkString(""));
+
 
 
     }
