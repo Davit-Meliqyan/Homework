@@ -18,69 +18,96 @@ public class Test {
 
     public static String signOfNumber1(int num) {
 
-        String sing = "negative";
-        if (num > 0) {
-            sing = "positive";
-        }
-        return sing;
+        return num > 0 ?
+                "positive":
+                "negative" ;
     }
 
     public static String signOfNumber2(int num) {
-
-        String sing = "zero";
-        if (num > 0) {
-            sing = "positive";
-        }
-        if (num < 0) {
-            sing = "negative";
-        }
-        return sing;
+        return num != 0 ?
+                num > 0 ?
+                        "positive" :
+                        "negative" :
+                "zero";
     }
 
-    public static double usingTernary(double a, double b) {
+    public static int maxTernary(int a, int b) {
 
-        return a > 0 ? Math.max(a, b) : Math.abs(a);
+        return a > b ? a : b;
+    }
+
+    public static int abcTernary(int a) {
+
+        return a < 0 ? a * -1 : a;
     }
 
 
     public static int checkString(String str) {
 
-        int result = str == null ? -1 : str.equals("") ? 0 : 1;
-        return result;
+        return str == null ? -1 : str.equals(" ") ? 0 : 1;
     }
 
     public static int max(int a, int b, int c) {
         System.out.println("Largest Number:");
-        return c > (a > b ? a : b) ? c : ((a > b) ? a : b);
+        return (a > b) ?
+                ((a > c) ? a : c) :
+                ((b > c) ? b : c);
     }
 
-    public static void correctAnswer(int i) {
-        switch (i) {
-            case 1:
-            case 3:
-            case 4:
-                System.out.println("Invalide choice");
-                break;
-            case 2:
+    public static int max1(int a, int b, int c) {
+        System.out.println("Largest Number:");
+        return maxTernary(a, maxTernary(a, b));
+    }
+
+    public static void checkAnswer(char ch) {
+        switch (ch) {
+            case 'b':
                 System.out.println("Congratulation");
                 break;
+            case 'a':
+            case 'c':
+            case 'd':
+                System.out.println("Invalid choice");
+                break;
+            default:
+                System.out.println("Illegal input");
+                break;
+
 
         }
     }
 
-    public static boolean switchVowel(char c) {
+    public static void showQuiz() {
+        System.out.println("What is the correct way to declare a variable to store an integer value in Java?\n" +
+                "a. int 1x=10;\n" +
+                "b. int x=10;\n" +
+                "c. float x=10.0f;\n" +
+                "d. string x=&quot;10&quot;");
+    }
+
+    public static void checkVowelConsonant(char c) {
+        if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))) {
+            System.err.printf("Provided character %c is not a letter\n", c);
+            return;
+        }
 
         switch (c) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
             case 'A':
             case 'E':
             case 'I':
             case 'O':
             case 'U':
-                return true;
-
+                System.out.println(c + "is a Vowel");
+                break;
 
             default:
-                return false;
+                System.out.println(c + "is a Consonant");
+                break;
         }
 
     }
@@ -137,6 +164,29 @@ public class Test {
         }
     }
 
+    public static void calculator(int a, int b, char op) {
+
+    }
+
+    public static void determineGrade(int quizScore, int midScore, int finalScore) {
+        int avg = (quizScore + midScore + finalScore) / 3;
+        switch (avg / 20) {
+            case 5:
+            case 4:
+                System.out.println("A");
+                break;
+            case 3:
+                System.out.println("B");
+                break;
+            case 2:
+                System.out.println("C");
+                break;
+            default:
+                System.out.println("F");
+                break;
+        }
+    }
+
 
     public static boolean isPower2(double a) {
         boolean bool = false;
@@ -177,15 +227,28 @@ public class Test {
 //        int number = scanner.nextInt();
 //        System.out.println(signOfNumber2(number));
 
-//        double a = scanner.nextDouble();
-//        double b = scanner.nextDouble();
-//        System.out.println(usingTernary(a, b));
+
+//        int a = scanner.nextInt();
+//        int b = scanner.nextInt();
+//        System.out.println(maxTernary(a, b));
+
+//        int x = scanner.nextInt();
+//        System.out.println(abcTernary( x));
+
+//        String str = scanner.nextLine();
+//        System.out.println(checkString(str));
+
 //        System.out.println("Enter all three numbers:");
 //        int a = scanner.nextInt();
 //        int b = scanner.nextInt();
 //        int c = scanner.nextInt();
 //        System.out.println(max(a, b, c));
 //
+//        showQuiz();
+//        System.out.println("Enter your choice: ");
+//        char ch = scanner.next().charAt(0);
+//        checkAnswer(ch);
+
 //        System.out.println("Input answer number");
 //        int i = scanner.nextInt();
 //        correctAnswer(i);
@@ -206,6 +269,14 @@ public class Test {
 //        int number = scanner.nextInt();
 //        switchEven(number);
 
+//        System.out.println("Enter quizScore");
+//        int quizScore = scanner.nextInt();
+//        System.out.println("Enter midScore");
+//        int midScore = scanner.nextInt();
+//        System.out.println("Enter finalScore");
+//        int finalScore = scanner.nextInt();
+//        System.out.print("Your grade is ");
+//        determineGrade(quizScore, midScore, finalScore);
 
 //        int a = scanner.nextInt();
 //        System.out.println(isPower2(a));
@@ -215,7 +286,6 @@ public class Test {
 //        System.out.println("Input String Variable");
 //        String str = scanner.nextLine();
 //        System.out.println(checkString(""));
-
 
 
     }
