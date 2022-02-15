@@ -280,6 +280,7 @@ public class Test {
 
 //        int a = scanner.nextInt();
 //        System.out.println(isPower2(a));
+
 //        int a = scanner.nextInt();
 //        System.out.println(isPower2Bit(a));
 

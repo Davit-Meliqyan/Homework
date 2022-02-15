@@ -41,13 +41,10 @@ public class Test {
         if (n > 0) {
             int m = 1;
             while (m <= n) {
-
                 if (squares(m)) {
                     System.out.println(m);
-
                 }
                 m++;
-
             }
         } else {
             System.err.println("number is negative");
@@ -272,8 +269,14 @@ public class Test {
 
 //        System.out.println("input number");
 //        int z = scanner.nextInt();
-//        System.out.println(sumOfDigits(z));
+//        System.out.println(sumO3fDigits(z));
+
+//
 
 
+
+//
     }
+
 }
+
