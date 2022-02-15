@@ -117,7 +117,19 @@ public class Test {
         System.out.println("number of zeros: " + countZ + " number of positive: " + countP + " number of negative: " + countN);
     }
 
+    public static void emulator(int n) {
+        int count = 1;
+        for (int i = 1; i <= n; ) {
 
+            if (i >= count) {
+                System.out.print(i);
+                count++;
+                i++;
+            } else {
+                i++;
+            }
+        }
+    }
 
     public static void twoForLoops(int n) {
         for (int i = 0; i < n; i++) {
@@ -164,7 +176,52 @@ public class Test {
     }
 
 
+    public static void table(int n) {
+        String st = "*";
+        int k = 1;
 
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j % 2 == 1) {
+                    k = 5 - k;
+                    if (j < 2) {
+                        for (int x = 1; x <= k; x++) {
+                            System.out.print("*");
+                        }
+                        for (int x = 1; x <= 5 - k; x++) {
+                            System.out.print(" ");
+                        }
+                    } else {
+                        for (int x = 1; x <= 5 - k; x++) {
+                            System.out.print(" ");
+                        }
+                        for (int x = 1; x <= k; x++) {
+                            System.out.print("*");
+                        }
+                    }
+                } else {
+                    if (j >= 2) {
+                        for (int x = 1; x <= 5 - k; x++) {
+                            System.out.print(" ");
+                        }
+                        for (int x = 1; x <= k; x++) {
+                            System.out.print("*");
+                        }
+                    } else {
+                        for (int x = 1; x <= k; x++) {
+                            System.out.print("*");
+                        }
+                        for (int x = 1; x <= 5 - k; x++) {
+                            System.out.print(" ");
+                        }
+                    }
+                }
+
+            }
+            System.out.println();
+            k++;
+        }
+    }
 
     public static void main(String[] args) {
 
@@ -225,7 +282,8 @@ public class Test {
 
 //        multiplicationTable(10);
 
-
+//        table(4);
+//
 
 
     }
