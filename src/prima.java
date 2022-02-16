@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
 public class prima {
 
     public static void main(String[] args) {
@@ -16,11 +20,13 @@ public class prima {
 //        System.out.println(isPrime(4));
 //        System.out.println(sum);
 
-        int i =-15;
+//        int i =-15;
+//
+//        //  \u000a ;
+//
+//        System.out.println(i);
 
-        //  \u000a i = 10;
 
-        System.out.println(i);
     }
 
 

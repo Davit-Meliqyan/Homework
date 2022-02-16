@@ -161,7 +161,7 @@ public class Test {
                     System.out.printf("%4s", "  * ");
                 } else if (i == 1) {
                     System.out.printf("%4s", "----");
-                } else if (j == 1 && i != 1) {
+                } else if (j == 1 ) {
                     System.out.printf("%4s", "   |");
                 } else if (i == 0) {
                     System.out.printf("%4s", j - 1);
@@ -277,13 +277,13 @@ public class Test {
 
 //        twoForLoops(10);
 
-        System.out.println("input n");
-        int n = scanner.nextInt();
-        checkerboard(n);
+//        System.out.println("input n");
+//        int n = scanner.nextInt();
+//        checkerboard(n);
 
-//        multiplicationTable(10);
+//        multiplicationTable(31);
 
-//        table(4);
+//       table(64);
 //
 
 
