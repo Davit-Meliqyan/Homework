@@ -2,7 +2,8 @@ package Homework_11;
 
 import java.util.Scanner;
 
-import static Homeworke_10.Test.squares;
+import static Homework_10.Test.*;
+
 
 public class Test {
 
@@ -276,9 +277,9 @@ public class Test {
 
 //        twoForLoops(10);
 
-//        System.out.println("input n");
-//        int n = scanner.nextInt();
-//        checkerboard(n);
+        System.out.println("input n");
+        int n = scanner.nextInt();
+        checkerboard(n);
 
 //        multiplicationTable(10);
 
