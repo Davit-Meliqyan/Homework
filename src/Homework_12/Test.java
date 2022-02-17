@@ -216,7 +216,7 @@ public class Test {
 
 //        swapMinMax(arr);
 
-        onlyOnce(arr);
+//        onlyOnce(arr);
 
     }
 }
