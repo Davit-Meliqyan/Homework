@@ -161,13 +161,20 @@ public class Test {
         }
     }
 
-    public static void onlyOnce(int[] arr){
-
-        for (int i=0;i<arr.length;i++) {
-            for (int j=i+1;j<arr.length;j++) {
-                if (arr[i] != arr[j]){
-                    System.out.print(arr[j] + " ");
+    public static void onlyOnce(int[] arr) {
+        boolean bool=false;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i] == arr[j] && i != j) {
+                    bool = false;
+                    break;
                 }
+                else {
+                    bool = true;
+                }
+            }
+            if (bool) {
+                System.out.print(arr[i] + " ");
             }
         }
     }
