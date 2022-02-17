@@ -127,13 +127,13 @@ public class Test {
         }
     }
 
-
     public static void cycleRight(int[] arr) {
-        int[] array = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            array[i] = arr[(i + arr.length - 1) % array.length];
+        int temp = arr[arr.length - 1];
+        for (int i = arr.length - 1; 1 <= i; i--) {
+            arr[i] = arr[i - 1];
         }
-        for (int e : array) {
+        arr[0] = temp;
+        for (int e : arr) {
             System.out.print(e + " ");
         }
     }
@@ -161,6 +161,16 @@ public class Test {
         }
     }
 
+    public static void onlyOnce(int[] arr){
+
+        for (int i=0;i<arr.length;i++) {
+            for (int j=i+1;j<arr.length;j++) {
+                if (arr[i] != arr[j]){
+                    System.out.print(arr[j] + " ");
+                }
+            }
+        }
+    }
 
     public static void main(String[] weather) {
 
@@ -185,7 +195,7 @@ public class Test {
 
 //        maxElementAndIndex(arr);
 
-        System.out.println(printSmallestPosElement(arr));
+        //       System.out.println(printSmallestPosElement(arr));
 
 //        differentElementsCount(arr);
 
@@ -198,6 +208,8 @@ public class Test {
 //        cycleRight(arr);
 
 //        swapMinMax(arr);
+
+        onlyOnce(arr);
 
     }
 }
