@@ -121,10 +121,33 @@ public class Test {
 
     public static void cycleRight(int[] arr) {
         int[] array = new int[arr.length];
-        for (int i = 0; i < arr.length ; i++) {
-            array[i] = arr[(i+arr.length-1)%array.length];
+        for (int i = 0; i < arr.length; i++) {
+            array[i] = arr[(i + arr.length - 1) % array.length];
         }
         for (int e : array) {
+            System.out.print(e + " ");
+        }
+    }
+
+    public static void swapMinMax(int[] arr) {
+        int min = arr[0];
+        int minIndex = 0;
+        int max = arr[0];
+        int maxIndex = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                maxIndex = i;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                minIndex =i;
+            }
+        }
+        arr[maxIndex] = min;
+        arr[minIndex] = max;
+
+        for (int e : arr) {
             System.out.print(e + " ");
         }
     }
@@ -138,6 +161,7 @@ public class Test {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
+
 
 //        printEvenIndex(arr);
 
@@ -163,6 +187,7 @@ public class Test {
 
 //        cycleRight(arr);
 
+//        swapMinMax(arr);
 
     }
 }

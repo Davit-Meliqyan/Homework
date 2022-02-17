@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import static Homework_10.Test.*;
 
-
 public class Test {
 
     public static void evenNumbers(int first, int second) {
@@ -283,7 +282,7 @@ public class Test {
 
 //        multiplicationTable(31);
 
-//       table(64);
+       table(4);
 //
 
 
