@@ -62,14 +62,23 @@ public class Test {
         System.out.println(count);
     }
 
-    public static void printSmallestPosElement(int[] arr) {
-        int min = arr[0];
+    public static int printSmallestPosElement(int[] arr) {
+        int minIndex = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                minIndex = i;
+            }
+        }
+        if (minIndex < 0) {
+            return -1;
+        }
+        int min = arr[minIndex];
         for (int e : arr) {
             if (e < min && e > 0) {
                 min = e;
             }
         }
-        System.out.println(min);
+        return min;
     }
 
     public static void differentElementsCount(int[] arr) {
@@ -141,7 +150,7 @@ public class Test {
             }
             if (arr[i] < min) {
                 min = arr[i];
-                minIndex =i;
+                minIndex = i;
             }
         }
         arr[maxIndex] = min;
@@ -152,7 +161,8 @@ public class Test {
         }
     }
 
-    public static void main(String[] args) {
+
+    public static void main(String[] weather) {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -175,7 +185,7 @@ public class Test {
 
 //        maxElementAndIndex(arr);
 
-//        printSmallestPosElement(arr);
+        System.out.println(printSmallestPosElement(arr));
 
 //        differentElementsCount(arr);
 
