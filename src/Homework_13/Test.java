@@ -160,17 +160,80 @@ public class Test {
 
     }
 
-    public static void main(String[] args) {
+    public static void spiralMatrix() {
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int m = scanner.nextInt();
+
+        int[][] matrix = new int[n][n];
+
+        int startingPointI = 0;
+        int startingPointJ = 1;
+
+        int l = n / 4 + n % 4;
+        while (l > 0) {
+            for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
+                if (matrix[startingPointI][j] == 1) {
+                    startingPointI++;
+                    startingPointJ--;
+                    break;
+                }
+                matrix[startingPointI][j - 1] = 1;
+                startingPointJ = j;
+            }
+            startingPointI++;
+            for (int i = startingPointI; i < matrix.length; i++) {
+                if (matrix[i][startingPointJ] == 1) {
+                    startingPointI--;
+                    startingPointJ--;
+                    break;
+                }
+                matrix[i - 1][startingPointJ] = 1;
+                startingPointI = i;
+            }
+            startingPointJ--;
+            for (int j = startingPointJ; j >= 0; j--) {
+                if (matrix[startingPointI][j] == 1) {
+                    startingPointI--;
+                    startingPointJ++;
+                    break;
+                }
+                matrix[startingPointI][j + 1] = 1;
+                startingPointJ = j;
+            }
+            startingPointI--;
+            for (int i = startingPointI; i >= 0; i--) {
+                if (matrix[i][startingPointJ] == 1) {
+                    startingPointI++;
+                    startingPointJ++;
+                    break;
+                }
+                matrix[i + 1][startingPointJ] = 1;
+                startingPointI = i;
+            }
+            l--;
+        }
+
+        System.out.println();
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                System.out.printf("%3s", anInt);
+
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//        int m = scanner.nextInt();
 
 //        mainDiagonal(n);
 //        {{1, 2, 3,4}, {5, 6,7,8}, { 9,10,11,12},{13,14,15,16}};
 
-        int[][] matrix = new int[n][m];
-
+        //       int[][] matrix = new int[n][m];
 
 
 //        int[][] matrix2D = matrixInit(matrix);
@@ -186,10 +249,12 @@ public class Test {
 
 //        athletes3(matrix2D);
 
-        int[][]  a = matrixInit(matrix);
-        int[][]  b = matrixInit(matrix);
+//        int[][]  a = matrixInit(matrix);
+//        int[][]  b = matrixInit(matrix);
+//
+//        addMatrix(a,b);
 
-        addMatrix(a,b);
+        spiralMatrix();
 
 //        revers180(matrix2D);
 
