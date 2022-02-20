@@ -224,6 +224,68 @@ public class Test {
         }
     }
 
+    public static void spiralMatrixSimple() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        int[][] matrix = new int[2 * n + 1][2 * n + 1];
+
+        int startingPointI = 0;
+        int startingPointJ = 2;
+
+        int count = 1;
+
+        int l = n + 1;
+        while (l > 0) {
+            for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
+                if (matrix[startingPointI][j] > 0) {
+                    break;
+                }
+                matrix[startingPointI][j - 1] = count;
+                count++;
+                startingPointJ = j;
+            }
+            startingPointI++;
+            for (int i = startingPointI; i < matrix.length; i++) {
+                if (matrix[i][startingPointJ] > 0) {
+                    break;
+                }
+                matrix[i - 1][startingPointJ] = count;
+                count++;
+                startingPointI = i;
+            }
+            startingPointJ--;
+            for (int j = startingPointJ; j >= 0; j--) {
+                if (matrix[startingPointI][j] > 0) {
+                    break;
+                }
+                matrix[startingPointI][j + 1] = count;
+                count++;
+                startingPointJ = j;
+            }
+            startingPointI--;
+            for (int i = startingPointI; i > 0; i--) {
+                if (matrix[i][startingPointJ] > 0) {
+                    break;
+                }
+                matrix[i + 1][startingPointJ] = count;
+                count++;
+                startingPointI = i;
+            }
+            startingPointJ++;
+            l--;
+        }
+        matrix[n][n] = count;
+
+        System.out.println();
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                System.out.printf("%4s", anInt);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
 
 //        Scanner scanner = new Scanner(System.in);
@@ -254,7 +316,9 @@ public class Test {
 //
 //        addMatrix(a,b);
 
-        spiralMatrix();
+//        spiralMatrix();
+
+       spiralMatrixSimple();
 
 //        revers180(matrix2D);
 
