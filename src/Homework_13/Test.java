@@ -17,7 +17,7 @@ public class Test {
     public static void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+                System.out.printf("%4s", matrix[i][j]);
             }
             System.out.println();
         }
@@ -30,8 +30,6 @@ public class Test {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i + j == n - 1) {
                     matrix[i][j] = 1;
-                } else {
-                    matrix[i][j] = 0;
                 }
                 System.out.printf("%3s", matrix[i][j]);
             }
@@ -46,9 +44,7 @@ public class Test {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (i + j == matrix.length - 1) {
                     matrix[i][j] = 1;
-                } else if (j + i < matrix.length) {
-                    matrix[i][j] = 0;
-                } else {
+                } else if (j + i > matrix.length) {
                     matrix[i][j] = 2;
                 }
                 System.out.printf("%3s", matrix[i][j]);
@@ -58,7 +54,6 @@ public class Test {
     }
 
     public static boolean isSymmetrical(int[][] matrix) {
-        boolean flag = true;
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (matrix[i][j] != matrix[j][i]) {
@@ -125,9 +120,6 @@ public class Test {
     }
 
     public static void addMatrix(int[][] a, int[][] b) {
-        int max = 0;
-        int maxLine = 0;
-        int index = 0;
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 System.out.printf("%3s", a[i][j] * b[i][j]);
@@ -137,7 +129,7 @@ public class Test {
     }
 
 
-    public static void revers180(int[][] matrix) {
+    public static int[][] revers180(int[][] matrix) {
         int k = matrix.length;
         int temp = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -150,152 +142,133 @@ public class Test {
                 matrix[matrix.length - i - 1][matrix[i].length - j - 1] = temp;
             }
         }
-        for (int[] ints : matrix) {
-            for (int anInt : ints) {
-                System.out.printf("%3s", anInt);
-
-            }
-            System.out.println();
-        }
+        return matrix;
 
     }
 
-    public static void spiralMatrix() {
+        public static int[][] spiralMatrix (int n) {
+
+            int[][] matrix = new int[n][n];
+
+            int startingPointI = 0;
+            int startingPointJ = 1;
+
+            int l = n / 4 + n % 4;
+            while (l > 0) {
+
+                for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
+                    if (matrix[startingPointI][j] == 1) {
+                        startingPointI++;
+                        startingPointJ--;
+                        break;
+                    }
+                    matrix[startingPointI][j - 1] = 1;
+                    startingPointJ = j;
+                }
+                startingPointI++;
+                for (int i = startingPointI; i < matrix.length; i++) {
+                    if (matrix[i][startingPointJ] == 1) {
+                        startingPointI--;
+                        startingPointJ--;
+                        break;
+                    }
+                    matrix[i - 1][startingPointJ] = 1;
+                    startingPointI = i;
+                }
+                startingPointJ--;
+                for (int j = startingPointJ; j >= 0; j--) {
+                    if (matrix[startingPointI][j] == 1) {
+                        startingPointI--;
+                        startingPointJ++;
+                        break;
+                    }
+                    matrix[startingPointI][j + 1] = 1;
+                    startingPointJ = j;
+                }
+                startingPointI--;
+                for (int i = startingPointI; i >= 0; i--) {
+                    if (matrix[i][startingPointJ] == 1) {
+                        startingPointI++;
+                        startingPointJ++;
+                        break;
+                    }
+                    matrix[i + 1][startingPointJ] = 1;
+                    startingPointI = i;
+                }
+                startingPointJ++;
+                l--;
+            }
+
+            return matrix;
+        }
+
+        public static int[][] spiralMatrixSimple () {
+            Scanner scanner = new Scanner(System.in);
+            int n = scanner.nextInt();
+
+            int[][] matrix = new int[2 * n + 1][2 * n + 1];
+
+            int startingPointI = 0;
+            int startingPointJ = 2;
+
+            int count = 1;
+
+            int l = n + 1;
+            while (l > 0) {
+                for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
+                    if (matrix[startingPointI][j] > 0) {
+                        break;
+                    }
+                    matrix[startingPointI][j - 1] = count;
+                    count++;
+                    startingPointJ = j;
+                }
+                startingPointI++;
+                for (int i = startingPointI; i < matrix.length; i++) {
+                    if (matrix[i][startingPointJ] > 0) {
+                        break;
+                    }
+                    matrix[i - 1][startingPointJ] = count;
+                    count++;
+                    startingPointI = i;
+                }
+                startingPointJ--;
+                for (int j = startingPointJ; j >= 0; j--) {
+                    if (matrix[startingPointI][j] > 0) {
+                        break;
+                    }
+                    matrix[startingPointI][j + 1] = count;
+                    count++;
+                    startingPointJ = j;
+                }
+                startingPointI--;
+                for (int i = startingPointI; i > 0; i--) {
+                    if (matrix[i][startingPointJ] > 0) {
+                        break;
+                    }
+                    matrix[i + 1][startingPointJ] = count;
+                    count++;
+                    startingPointI = i;
+                }
+                startingPointJ++;
+                l--;
+            }
+            matrix[n][n] = count;
+
+            return matrix;
+        }
+
+        public static void main (String[]args){
 
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
-        int[][] matrix = new int[n][n];
-
-        int startingPointI = 0;
-        int startingPointJ = 1;
-
-        int l = n / 4 + n % 4;
-        while (l > 0) {
-            for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
-                if (matrix[startingPointI][j] == 1) {
-                    startingPointI++;
-                    startingPointJ--;
-                    break;
-                }
-                matrix[startingPointI][j - 1] = 1;
-                startingPointJ = j;
-            }
-            startingPointI++;
-            for (int i = startingPointI; i < matrix.length; i++) {
-                if (matrix[i][startingPointJ] == 1) {
-                    startingPointI--;
-                    startingPointJ--;
-                    break;
-                }
-                matrix[i - 1][startingPointJ] = 1;
-                startingPointI = i;
-            }
-            startingPointJ--;
-            for (int j = startingPointJ; j >= 0; j--) {
-                if (matrix[startingPointI][j] == 1) {
-                    startingPointI--;
-                    startingPointJ++;
-                    break;
-                }
-                matrix[startingPointI][j + 1] = 1;
-                startingPointJ = j;
-            }
-            startingPointI--;
-            for (int i = startingPointI; i >= 0; i--) {
-                if (matrix[i][startingPointJ] == 1) {
-                    startingPointI++;
-                    startingPointJ++;
-                    break;
-                }
-                matrix[i + 1][startingPointJ] = 1;
-                startingPointI = i;
-            }
-            l--;
-        }
-
-        System.out.println();
-        for (int[] ints : matrix) {
-            for (int anInt : ints) {
-                System.out.printf("%3s", anInt);
-
-            }
-            System.out.println();
-        }
-    }
-
-    public static void spiralMatrixSimple() {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-
-        int[][] matrix = new int[2 * n + 1][2 * n + 1];
-
-        int startingPointI = 0;
-        int startingPointJ = 2;
-
-        int count = 1;
-
-        int l = n + 1;
-        while (l > 0) {
-            for (int j = startingPointJ; j < matrix[startingPointI].length; j++) {
-                if (matrix[startingPointI][j] > 0) {
-                    break;
-                }
-                matrix[startingPointI][j - 1] = count;
-                count++;
-                startingPointJ = j;
-            }
-            startingPointI++;
-            for (int i = startingPointI; i < matrix.length; i++) {
-                if (matrix[i][startingPointJ] > 0) {
-                    break;
-                }
-                matrix[i - 1][startingPointJ] = count;
-                count++;
-                startingPointI = i;
-            }
-            startingPointJ--;
-            for (int j = startingPointJ; j >= 0; j--) {
-                if (matrix[startingPointI][j] > 0) {
-                    break;
-                }
-                matrix[startingPointI][j + 1] = count;
-                count++;
-                startingPointJ = j;
-            }
-            startingPointI--;
-            for (int i = startingPointI; i > 0; i--) {
-                if (matrix[i][startingPointJ] > 0) {
-                    break;
-                }
-                matrix[i + 1][startingPointJ] = count;
-                count++;
-                startingPointI = i;
-            }
-            startingPointJ++;
-            l--;
-        }
-        matrix[n][n] = count;
-
-        System.out.println();
-        for (int[] ints : matrix) {
-            for (int anInt : ints) {
-                System.out.printf("%4s", anInt);
-            }
-            System.out.println();
-        }
-    }
-
-    public static void main(String[] args) {
-
-//        Scanner scanner = new Scanner(System.in);
-//        int n = scanner.nextInt();
 //        int m = scanner.nextInt();
 
 //        mainDiagonal(n);
 //        {{1, 2, 3,4}, {5, 6,7,8}, { 9,10,11,12},{13,14,15,16}};
 
-        //       int[][] matrix = new int[n][m];
+            //       int[][] matrix = new int[n][m];
 
 
 //        int[][] matrix2D = matrixInit(matrix);
@@ -316,11 +289,11 @@ public class Test {
 //
 //        addMatrix(a,b);
 
-//        spiralMatrix();
+            printMatrix(spiralMatrix(n));
 
-       spiralMatrixSimple();
+//            printMatrix(spiralMatrixSimple());
 
 //        revers180(matrix2D);
 
+        }
     }
-}
