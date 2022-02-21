@@ -42,16 +42,6 @@ public class Test {
 
     }
 
-    public static void countVowelsDigits() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a String:");
-        String s = scanner.nextLine();
-        System.out.println();
-        System.out.print("Number of vowels: " + countVowel(s));
-        System.out.printf(" %4d", 100 * countVowel(s) / s.length());
-        //System.out.print("Number of vowels: " + (int)countVowe(s) +" ( "+(100*countVowe(s)/s.length())+"% )");
-
-    }
 
     public static String bin2Dec(String s) {
 
