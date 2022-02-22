@@ -42,13 +42,32 @@ public class Test {
 
     }
 
+    public static String palindrome(String s) {
+
+        for (int i = 0; i < s.length(); i++) {
+            if (!(s.charAt(i) ==  (s.charAt(s.length()-1-i)))) {
+                return "is not a Palindrome";
+            }
+        }
+        return "xxx";
+    }
+
+    public static String binaryString(String s) {
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (!(s.charAt(i) == '1' || (s.charAt(i) == '0'))) {
+                return " \\\"" + s + "\\\" is NOT a binary string";
+            }
+        }
+        return " \\\"" + s + "\\\" is  a binary string";
+    }
 
     public static String bin2Dec(String s) {
 
         int dec = 0;
-        for (int i = s.length()-1; i >= 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             if (s.charAt(i) == '1') {
-                dec += Math.pow(2, s.length()-1-i);
+                dec += Math.pow(2, s.length() - 1 - i);
             } else if (s.charAt(i) == '0') {
 
             } else {
@@ -96,7 +115,7 @@ public class Test {
 
     public static int countsCertainChar(String s, char c) {
         int count = 0;
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length()/2; i++) {
             if (s.charAt(i) == c) {
                 count++;
             }
@@ -132,7 +151,11 @@ public class Test {
 
         //   System.out.println(firstNonRepeatedChar(s));
 
-        System.out.println(bin2Dec("1110"));
+        //   System.out.println(palindrome("moom"));
+
+        //   System.out.println(bin2Dec("1110"));
+
+        //   System.out.println(binaryString("1112"));
 
 
     }
