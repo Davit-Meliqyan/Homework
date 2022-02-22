@@ -32,6 +32,16 @@ public class Test {
         return count;
     }
 
+    public static int countDigit(String s) {
+        int count = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if ("0123456789".indexOf(s.charAt(i)) != -1) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public static String reverseString(String s) {
         StringBuilder retS = new StringBuilder();
 
@@ -39,8 +49,17 @@ public class Test {
             retS.append(s.charAt(i));
         }
         return retS.toString();
-
     }
+
+   public static void countVowelsDigit(String s){
+        double vowel = (double) 100 * countVowel(s) / s.length();
+       System.out.println("Number of vowels: " + countVowel(s) +" " );
+       System.out.printf("%.2f",vowel);
+       System.out.println();
+       double digit = (double) 100 * countDigit(s) / s.length();
+       System.out.println("Number of digits: " + countDigit(s) +" " );
+       System.out.printf("%.2f",digit);
+   }
 
     public static String palindrome(String s) {
 
@@ -156,6 +175,8 @@ public class Test {
         //   System.out.println(bin2Dec("1110"));
 
         //   System.out.println(binaryString("1112"));
+
+        //   countVowelsDigit("sds1aaaa2sdaf45sf1a12121212s");
 
 
     }
