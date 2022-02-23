@@ -99,7 +99,17 @@ public class Test {
         }
     }
 
-
+    public static int[][] multiplicationTable(int n, int m) {
+        int[][] matrix = new int[n][m];
+        int i = 1;
+        for (int j = 0; j < n * m - m; j++) {
+            matrix[i][j % m] += (j % m) * i;
+            if (j % m == 0 && j > 0) {
+                i++;
+            }
+        }
+        return matrix;
+    }
 
     public static void main(String[] args) {
 
@@ -126,7 +136,7 @@ public class Test {
 
 //        geometricProgression(b, q, n);
 
-//        printMatrix(multiplicationTable(3, 3));
+        printMatrix(multiplicationTable(5, 5));
 
 
     }
