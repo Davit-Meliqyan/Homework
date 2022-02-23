@@ -87,6 +87,7 @@ public class Test {
 
         Scanner scanner = new Scanner(System.in);
 //        int n = scanner.nextInt();
+        String s = scanner.nextLine();
 
 //        System.out.println(powTwo(n));
 
@@ -96,7 +97,7 @@ public class Test {
 
 //        palindrome(1000,9999);
 
-//        System.out.println(word("aaaaaaaGGGGGGGG"));
+        System.out.println(word(s));
 
 //        primeFactors(n);
 
