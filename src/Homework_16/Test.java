@@ -37,8 +37,8 @@ public class Test {
     public static StringBuilder word(String s) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(String.valueOf(s.charAt(0)).toUpperCase());
-        for (int i = 1;i<s.length();i++){
-            stringBuilder.append((""+s.charAt(i)).toLowerCase());
+        for (int i = 1; i < s.length(); i++) {
+            stringBuilder.append(("" + s.charAt(i)).toLowerCase());
         }
         return stringBuilder;
     }
@@ -66,6 +66,22 @@ public class Test {
         }
     }
 
+    public static void printMatrix(int[][] matrix) {
+        for (int[] chars : matrix) {
+            for (int aChar : chars) {
+                System.out.printf("%4s", aChar);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void geometricProgression(double b, double q, int n) {
+        for (int i = 1; i < n; i++) {
+            b *= q;
+        }
+        System.out.printf("%.2f", b);
+    }
+
     public static void primeFactors(int n) {
         int i = 2;
         while (i <= n / 2) {
@@ -83,11 +99,16 @@ public class Test {
         }
     }
 
+
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 //        int n = scanner.nextInt();
-        String s = scanner.nextLine();
+//        String s = scanner.nextLine();
+//        double b = scanner.nextDouble();
+//        double q = scanner.nextDouble();
+//        int n = scanner.nextInt();
 
 //        System.out.println(powTwo(n));
 
@@ -97,11 +118,15 @@ public class Test {
 
 //        palindrome(1000,9999);
 
-        System.out.println(word(s));
+//        System.out.println(word(s));
 
 //        primeFactors(n);
 
 //        printMatrix(oAndX(n));
+
+//        geometricProgression(b, q, n);
+
+//        printMatrix(multiplicationTable(3, 3));
 
 
     }
