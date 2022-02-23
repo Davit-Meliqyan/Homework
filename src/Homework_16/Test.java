@@ -136,7 +136,7 @@ public class Test {
 
 //        geometricProgression(b, q, n);
 
-        printMatrix(multiplicationTable(5, 5));
+        printMatrix(multiplicationTable(11, 11));
 
 
     }
