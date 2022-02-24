@@ -84,7 +84,7 @@ public class Test {
 
     public static void primeFactors(int n) {
         int i = 2;
-        while (i <= n / 2) {
+        while (i <= Math.sqrt(n)) {
             while (n % i == 0) {
                 System.out.print(i);
                 if (n / i != 1) {
@@ -111,11 +111,35 @@ public class Test {
         return matrix;
     }
 
+    public static int[][] table13(int n, int m) {
+        int[][] matrix = new int[n][m];
+        int count = 0;
+        int i = 0;
+        for (int j = 0; j < n * m; j++) {
+            if (j % m == 0 && j > 0) {
+                if (i % 2 == 0) {
+                    count += m - 1;
+                } else {
+                    count += m + 1 ;
+                }
+                i++;
+            }
+            matrix[i][j % m] = count;
+            if (i % 2 == 0) {
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+        return matrix;
+    }
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 //        int n = scanner.nextInt();
-//        String s = scanner.nextLine();
+        String s = scanner.nextLine();
 //        double b = scanner.nextDouble();
 //        double q = scanner.nextDouble();
 //        int n = scanner.nextInt();
@@ -136,7 +160,8 @@ public class Test {
 
 //        geometricProgression(b, q, n);
 
-        printMatrix(multiplicationTable(11, 11));
+//        printMatrix(multiplicationTable(11, 11));
+        printMatrix(table13(7, 10));
 
 
     }
