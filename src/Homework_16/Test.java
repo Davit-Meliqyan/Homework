@@ -111,6 +111,7 @@ public class Test {
         return matrix;
     }
 
+
     public static int[][] table13(int n, int m) {
         int[][] matrix = new int[n][m];
         int count = 0;
@@ -120,15 +121,14 @@ public class Test {
                 if (i % 2 == 0) {
                     count += m - 1;
                 } else {
-                    count += m + 1 ;
+                    count += m + 1;
                 }
                 i++;
             }
             matrix[i][j % m] = count;
             if (i % 2 == 0) {
                 count++;
-            }
-            else {
+            } else {
                 count--;
             }
         }
@@ -161,7 +161,10 @@ public class Test {
 //        geometricProgression(b, q, n);
 
 //        printMatrix(multiplicationTable(11, 11));
-        printMatrix(table13(7, 10));
+
+//        printMatrix(table13(7, 10));
+
+
 
 
     }
