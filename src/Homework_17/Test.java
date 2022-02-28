@@ -86,6 +86,15 @@ public class Test {
         return Math.max(Math.max(a, b), Math.max(c, d));
     }
 
+    //--------------------------------------------------------------------------------8
+    public static double distance(int x1, int x2) {
+        return Math.sqrt(Math.pow(x1, 2) + Math.pow(x2, 2));
+    }
+
+    public static double distance(int x1, int x2, int x3, int x4) {
+        return Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(x2 - x4, 2));
+    }
+
     public static void main(String[] args) {
 
 //        print(new double[]{4.2, 5.04, 5});
@@ -95,6 +104,8 @@ public class Test {
 //        System.out.println(square(5));
 
 //        System.out.println(max(5,10,4,3));
+
+//        System.out.println(distance(1,-1));
 
     }
 }
