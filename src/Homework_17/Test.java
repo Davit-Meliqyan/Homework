@@ -94,6 +94,7 @@ public class Test {
     public static double distance(int x1, int x2, int x3, int x4) {
         return Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(x2 - x4, 2));
     }
+    //--------------------------------------------------------------------------------8
 
     public static void main(String[] args) {
 
