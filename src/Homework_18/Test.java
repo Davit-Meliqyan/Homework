@@ -1,6 +1,9 @@
 package Homework_18;
 
 
+import Homework_5.Gender;
+
+
 public class Test {
     public static void main(String[] args) {
         Person person = new Person("Armen", "Meliqyan", "AN123456", 20, Gender.MALE, "ARM");
@@ -26,9 +29,8 @@ public class Test {
 
         Triangle triangle = new Triangle(30,30,30);
 
-        System.out.println(triangle.check(triangle));
-        System.out.println(triangle.checkRight(triangle));
-        System.out.println(triangle.areaOrPerimeter(triangle));
-
+        System.out.println(triangle.check());
+        System.out.println(triangle.checkRight());
+        System.out.println(triangle.areaOrPerimeter());
     }
 }

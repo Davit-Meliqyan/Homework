@@ -1,5 +1,8 @@
 package Homework_18;
 
+
+import Homework_5.Gender;
+
 public class Person {
     private String firstName;
     private String lastName;

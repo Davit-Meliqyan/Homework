@@ -43,17 +43,17 @@ public class Triangle {
         return sideA * sideB * sideC != 0 && sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA;
     }
 
-    public boolean check(Triangle triangle) {
-        return triangle.validIsTriangle(getSideA(), getSideB(), getSideC());
+    public  boolean check() {
+        return validIsTriangle(getSideA(), getSideB(), getSideC());
     }
 
-    public boolean checkRight(Triangle triangle) {
+    public boolean checkRight() {
         return getSideA() == getSideB() && getSideB() == getSideC();
     }
 
-    public double areaOrPerimeter(Triangle triangle){
+    public double areaOrPerimeter(){
         double p = (getSideA()+getSideB()+getSideC())/2;
-        if(checkRight(triangle)){
+        if(checkRight()){
             return Math.sqrt(p*(p-getSideA())*(p-getSideB())*(p-getSideC()));
         }
         return 2*p;
