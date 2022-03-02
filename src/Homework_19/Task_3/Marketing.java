@@ -29,7 +29,7 @@ public class Marketing extends ItCompany{
         this.departmentName = departmentName;
     }
 
-    void marketing(){
-
+    public void marketing(){
+        System.out.println("Marketing");
     }
 }

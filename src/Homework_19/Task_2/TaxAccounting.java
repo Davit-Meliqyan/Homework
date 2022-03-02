@@ -13,23 +13,27 @@ public class TaxAccounting extends Accounting {
         this.departmentName = departmentName;
     }
 
+    @Override
     public int getCountOfEmployers() {
         return countOfEmployers;
     }
 
+    @Override
     public void setCountOfEmployers(int countOfEmployers) {
         this.countOfEmployers = countOfEmployers;
     }
 
+    @Override
     public String getDepartmentName() {
         return departmentName;
     }
 
+    @Override
     public void setDepartmentName(String departmentName) {
         this.departmentName = departmentName;
     }
 
-    int account() {
-        return 0;
+    public void account() {
+        System.out.println("TaxAccounting");
     }
 }

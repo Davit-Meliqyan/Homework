@@ -29,7 +29,7 @@ public class SMM extends Marketing{
         this.departmentName = departmentName;
     }
 
-    void marketing(){
-
+    public void marketing(){
+        System.out.println("SMM");
     }
 }

@@ -30,7 +30,7 @@ public class Accounting extends ItCompany{
         this.departmentName = departmentName;
     }
 
-    int account() {
-        return 0;
+    public void account() {
+        System.out.println("Accounting");
     }
 }

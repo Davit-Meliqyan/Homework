@@ -29,7 +29,7 @@ public class ItCompany {
         this.companyName = companyName;
     }
 
-    int account() {
-        return 0;
+    public void account() {
+        System.out.println("ItCompany");
     }
 }
