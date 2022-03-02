@@ -44,7 +44,7 @@ public class Triangle {
         return sideA * sideB * sideC != 0 && sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA;
     }
 
-    public  boolean check() {
+    public boolean check() {
         return validIsTriangle(getSideA(), getSideB(), getSideC());
     }
 
@@ -52,12 +52,20 @@ public class Triangle {
         return getSideA() == getSideB() && getSideB() == getSideC();
     }
 
-    public double areaOrPerimeter(){
-        double p = (getSideA()+getSideB()+getSideC())/2;
-        if(checkRight()){
-            return Math.sqrt(p*(p-getSideA())*(p-getSideB())*(p-getSideC()));
+    private double area() {
+        double p = (getSideA() + getSideB() + getSideC()) / 2;
+        return Math.sqrt(p * (p - getSideA()) * (p - getSideB()) * (p - getSideC()));
+    }
+
+    private double perimeter() {
+        return (getSideA() + getSideB() + getSideC());
+    }
+
+    public double areaOrPerimeter() {
+        if (checkRight()) {
+            return area();
         }
-        return 2*p;
+        return perimeter();
     }
 
 }
