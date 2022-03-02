@@ -18,14 +18,17 @@ public final class ValidPerson {
     }
 
     public static boolean validPassportId(String passportId) {
-        boolean flag = true;
-        for (int i = 2; i < passportId.length(); i++) {
-            if ("0123456789".indexOf(passportId.charAt(i)) == -1) {
-                flag = false;
-                break;
-            }
+        if (passportId == null){
+            return false;
         }
-        return passportId.length() == 8 && passportId.charAt(0) == 'A' && passportId.charAt(1) == 'N' && flag;
+        else {
+            for (int i = 2; i < passportId.length(); i++) {
+                if ("0123456789".indexOf(passportId.charAt(i)) == -1) {
+                   return false;
+                }
+            }
+            return passportId.length() == 8 && passportId.substring(0,2).equals("AN");}
+
     }
 
 
