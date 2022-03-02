@@ -61,11 +61,13 @@ public class Triangle {
         return (getSideA() + getSideB() + getSideC());
     }
 
+    public boolean isSquare(){
+        return Math.pow(Math.max(Math.max(sideA,sideB),sideC),2) == Math.pow(Math.min(Math.min(sideA,sideB),sideC),2) +Math.pow(sideA+sideB+sideC-Math.min(Math.min(sideA,sideB),sideC)- Math.max(Math.max(sideA,sideB),sideC),2);
+    }
     public double areaOrPerimeter() {
         if (checkRight()) {
             return area();
         }
         return perimeter();
     }
-
 }

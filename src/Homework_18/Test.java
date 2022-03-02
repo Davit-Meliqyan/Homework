@@ -27,12 +27,15 @@ public class Test {
         }
         person1.setGender(MALE);
 
-        person1.display();
-
+//        person1.display();
+        Triangle triangle = new Triangle(5,12,13);
 //        Triangle triangle = new Triangle(30,30,30);
 //
 //        System.out.println(triangle.check());
 //        System.out.println(triangle.checkRight());
 //        System.out.println(triangle.areaOrPerimeter());
+
+
+        System.out.println(triangle.isSquare());
     }
 }
